@@ -106,7 +106,7 @@
 
         <div class="row" id="Pie">
             <div class="col-md-12 dos">
-                <h2>Programación Web 1</h2>
+                <h2 id="fecha"></h2>
             </div>
         </div>
     </div>
@@ -114,6 +114,8 @@
     <script>
         const slides = document.querySelectorAll('.slider-item');
         let currentIndex = 0;
+
+        setInterval(fechahoy, 1000); 
 
         function nextSlide() {
             slides[currentIndex].classList.remove('active');
@@ -132,7 +134,14 @@
         function toggleDropdown() {
           document.querySelector('.dropdown').classList.toggle('open');
         }
+
+        function fechahoy(){
+            const dia = new Date();
+            document.getElementById("fecha").textContent = dia;
+        }
+
     </script>
 
 </body>
 </html>
+
