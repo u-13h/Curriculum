@@ -1,0 +1,189 @@
+html {
+    scroll-behavior: smooth;
+}
+
+   body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); 
+      background-size: cover;
+      background-repeat: repeat;
+    }
+
+    h1, h2{
+      text-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        from {
+          text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+        }
+        to {
+          text-shadow: 0 0 30px #00ffff, 0 0 40px #00ffff;
+        }
+      }
+
+/*secciones*/
+.uno { 
+    height: 300px; 
+    border: 5px solid white;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    background-color: black;
+}
+
+.dos { 
+    height: 100px; 
+    border: 5px solid white;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    background-color: black;
+}
+
+/*para slider*/
+.slider-container {
+    position: relative;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 200px;           
+    padding: 20px;
+    overflow: hidden;        
+    margin-top: 20px;      
+}
+
+.slider-item {
+    display: none;          
+    text-align: center;
+}
+
+.active {
+    display: block;         
+}
+
+.slider-container img {
+    width: 50%;             
+    height: auto;            
+    object-fit: contain;     
+    border-radius: 10px;
+}
+
+.image-text {
+    position: absolute;
+    bottom: 0px;            
+    left: 50%;
+    transform: translateX(-50%);  
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);  
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/*botones*/
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*nav bar*/
+.dropdown {
+  position: relative;
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin-right: 113px;
+  margin-top: 30px;
+  
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  z-index: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.dropdown-menu a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color: #ddd;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+/*carrusel*/
+.carrusel {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+  height: 290px; 
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+.carrusel::-webkit-scrollbar {
+display: none; 
+}
+
+.carrusel .imagenes {
+scroll-snap-align: start;
+flex: 0 0 auto;
+width: 400px;  
+height: 290px;
+border: 1px solid #ccc;
+border-radius: 10px;
+overflow: hidden;
+display: flex;
+align-items: center;
+justify-content: center;
+background: white;
+}
+
+.carrusel .imagenes img {
+width: 100%;
+height: 100%;
+object-fit: cover; 
+border-radius: 10px;
+}
+
+
+

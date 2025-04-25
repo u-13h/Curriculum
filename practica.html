@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemploprac</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="stylecurr.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row"> 
+             
+            <div class="col-lg-12 uno">
+                <h1>Información de contacto</h1>
+                <div class="dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown()">☰ Secciones</button>
+                    <div class="dropdown-menu">
+                      <a href="#Acerca">Acerca de mí</a>
+                      <a href="#ExpFor">Experiencia Laboral</a>
+                      <a href="#ExpFor">Formación Académica</a>
+                      <a href="#Portafolio">Portafolio</a>
+                    </div>
+                  </div>       
+                <div class="slider-container">
+                    <button class="prev" onclick="prevSlide()">❮</button>
+
+                    <div class="slider-item active">
+                        <img src="C:/Users/Uriel/Desktop/apps/wasap.png" alt="Wasap">
+                        <a href="https://wa.me/523321931464" target="_blank">
+                            <div class="image-text">Número: +52 3321931464</div>
+                        </a>
+                        
+                    </div>
+
+                    <div class="slider-item">
+                        <img src="C:/Users/Uriel/Desktop/apps/yimail.png" alt="Yimail">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=urihdezflo1013@gmail.com" target="_blank">
+                            <div class="image-text">Correo: urihdezflo1013@gmail.com</div>
+                        </a>                        
+                        
+                    </div>
+
+                    <div class="slider-item">
+                        <img src="C:/Users/Uriel/Desktop/apps/insta.png" alt="Instagram">
+                        <a href="https://www.instagram.com/h6_10.m" target="_blank">
+                            <div class="image-text">Instagram: @h6_10.m</div>
+                        </a>
+                        
+                    </div>
+
+                    <button class="next" onclick="nextSlide()">❯</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="Acerca">
+            <div class="col-md-12 dos">
+                <h1>Acerca de mí</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 uno">
+                <h2>Mi nombre es Uriel Hernández Flores me gusta tocar guitarra y jugar videojuegos.</h2>
+                <h2>Estudio la carrera de desarrollo de software en el ceti colomos.</h2>
+                <h2>Tengo 18 años, nací el 13 de septiembre del 2006.</h2>
+            </div>
+        </div>
+
+        <div class="row" id="ExpFor">
+            <div class="col-md-6 dos">
+                <h1>Experiencia laboral</h1>
+            </div>
+            <div class="col-md-6 dos">
+                <h1>Formación Académica</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 uno">
+                <h2>Hasta ahora no he tenido ninguna experiencia laboral.</h2>
+            </div>
+            <div class="col-md-6 uno">
+                <h2>Estoy en 7mo semestre de bachillerato en el ceti colomos, estudiando la carrera de desarrollo de software en nivel tecnólogo.</h2>
+            </div>
+        </div>
+
+        <div class="row" id="Portafolio">
+            <div class="col-md-12 dos">
+                <h1>Portafolio</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 uno">
+                <div class="carrusel">
+                    <div class="imagenes"><img src="C:\Users\Uriel\Pictures\Screenshots\port1.png" alt="port1"></div>
+                    <div class="imagenes"><img src="C:\Users\Uriel\Pictures\Screenshots\port2.png" alt="port2"></div>
+                    <div class="imagenes"><img src="C:\Users\Uriel\Pictures\Screenshots\port3.png" alt="port3"></div>
+                    <div class="imagenes"><img src="C:\Users\Uriel\Pictures\Screenshots\port4.png" alt="port4"></div>
+                    <div class="imagenes"><img src="C:\Users\Uriel\Pictures\Screenshots\port5.png" alt="port5"></div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="Pie">
+            <div class="col-md-12 dos">
+                <h2>Programación Web 1</h2>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slider-item');
+        let currentIndex = 0;
+
+        function nextSlide() {
+            slides[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].classList.add('active');
+        }
+
+        function prevSlide() {
+            slides[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            slides[currentIndex].classList.add('active');
+        }
+
+        setInterval(nextSlide, 3000);  
+
+        function toggleDropdown() {
+          document.querySelector('.dropdown').classList.toggle('open');
+        }
+    </script>
+
+</body>
+</html>
